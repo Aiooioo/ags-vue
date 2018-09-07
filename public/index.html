@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>Using ArcGIS JSAPI with Vue</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    var dojoConfig = {
+      async: true,
+      has: {
+        "esri-promise-compatibility": 1,  // Use native Promises by default
+        "esri-featurelayer-webgl": 1      // Enable FeatureLayer WebGL capabilities
+      },
+      deps: ['app/app'],
+      packages: [
+        {
+          name: 'app',
+          location: location.pathname.replace(/\/[^\/]+$/, ''),
+          main: 'app'
+        }
+      ]
+    };
+  </script>
+  <script src="https://js.arcgis.com/4.8/"></script>
+
+</body>
+
+</html>
